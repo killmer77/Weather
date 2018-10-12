@@ -27,12 +27,7 @@ class ViewController: UIViewController {
         
         openweathermap()
 
-        title = cityname
-        self.weatherLabel.text = "Rainy"
-        self.tempLabel.text = "25℃"
-        self.maxMinTempLabel.text = "25℃ / 16℃"
-        self.humidityLabel.text = "49%"
-        
+        title = cityname        
         // Do any additional setup after loading the view, typically from a nib.
     }
     
