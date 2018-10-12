@@ -7,16 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D17E82FC2170560A00FA17C8 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17E82FB2170560A00FA17C8 /* SwiftyJSON.swift */; };
 		D1CF9EBC216DBA9E001126CD /* CityTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1CF9EBB216DBA9E001126CD /* CityTableViewController.swift */; };
 		FF3A6D7E216DB41C002210E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3A6D7D216DB41C002210E9 /* AppDelegate.swift */; };
 		FF3A6D80216DB41C002210E9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3A6D7F216DB41C002210E9 /* ViewController.swift */; };
 		FF3A6D83216DB41C002210E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF3A6D81216DB41C002210E9 /* Main.storyboard */; };
 		FF3A6D85216DB41E002210E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF3A6D84216DB41E002210E9 /* Assets.xcassets */; };
 		FF3A6D88216DB41E002210E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF3A6D86216DB41E002210E9 /* LaunchScreen.storyboard */; };
-		FF3A6D91216DC3BA002210E9 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3A6D90216DC3BA002210E9 /* SwiftyJSON.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D17E82FB2170560A00FA17C8 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = "../../HackingWithSwift-master/project7-files/SwiftyJSON.swift"; sourceTree = "<group>"; };
 		D1CF9EBB216DBA9E001126CD /* CityTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityTableViewController.swift; sourceTree = "<group>"; };
 		FF3A6D7A216DB41C002210E9 /* Weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF3A6D7D216DB41C002210E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -25,7 +26,6 @@
 		FF3A6D84216DB41E002210E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FF3A6D87216DB41E002210E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FF3A6D89216DB41E002210E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FF3A6D90216DC3BA002210E9 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = ../../../Documents/pbl2/Project7_PBL/Project7_PBL/SwiftyJSON.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,8 +59,8 @@
 			isa = PBXGroup;
 			children = (
 				FF3A6D7D216DB41C002210E9 /* AppDelegate.swift */,
-				FF3A6D90216DC3BA002210E9 /* SwiftyJSON.swift */,
 				FF3A6D7F216DB41C002210E9 /* ViewController.swift */,
+				D17E82FB2170560A00FA17C8 /* SwiftyJSON.swift */,
 				FF3A6D81216DB41C002210E9 /* Main.storyboard */,
 				D1CF9EBB216DBA9E001126CD /* CityTableViewController.swift */,
 				FF3A6D84216DB41E002210E9 /* Assets.xcassets */,
@@ -144,7 +144,7 @@
 				D1CF9EBC216DBA9E001126CD /* CityTableViewController.swift in Sources */,
 				FF3A6D80216DB41C002210E9 /* ViewController.swift in Sources */,
 				FF3A6D7E216DB41C002210E9 /* AppDelegate.swift in Sources */,
-				FF3A6D91216DC3BA002210E9 /* SwiftyJSON.swift in Sources */,
+				D17E82FC2170560A00FA17C8 /* SwiftyJSON.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
