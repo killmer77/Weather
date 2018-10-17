@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D13CFE3F2176F7AA00151B0F /* city.list.json in Resources */ = {isa = PBXBuildFile; fileRef = D13CFE3E2176F7A900151B0F /* city.list.json */; };
 		D17E82FE2170569100FA17C8 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17E82FD2170569100FA17C8 /* SwiftyJSON.swift */; };
 		D1CF9EBC216DBA9E001126CD /* CityTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1CF9EBB216DBA9E001126CD /* CityTableViewController.swift */; };
 		FF3A6D7E216DB41C002210E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3A6D7D216DB41C002210E9 /* AppDelegate.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D13CFE3E2176F7A900151B0F /* city.list.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = city.list.json; sourceTree = "<group>"; };
 		D17E82FD2170569100FA17C8 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = "../../HackingWithSwift-master/project7-files/SwiftyJSON.swift"; sourceTree = "<group>"; };
 		D1CF9EBB216DBA9E001126CD /* CityTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityTableViewController.swift; sourceTree = "<group>"; };
 		FF3A6D7A216DB41C002210E9 /* Weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weather.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -66,6 +68,7 @@
 				FF3A6D84216DB41E002210E9 /* Assets.xcassets */,
 				FF3A6D86216DB41E002210E9 /* LaunchScreen.storyboard */,
 				FF3A6D89216DB41E002210E9 /* Info.plist */,
+				D13CFE3E2176F7A900151B0F /* city.list.json */,
 			);
 			path = Weather;
 			sourceTree = "<group>";
@@ -129,6 +132,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF3A6D88216DB41E002210E9 /* LaunchScreen.storyboard in Resources */,
+				D13CFE3F2176F7AA00151B0F /* city.list.json in Resources */,
 				FF3A6D85216DB41E002210E9 /* Assets.xcassets in Resources */,
 				FF3A6D83216DB41C002210E9 /* Main.storyboard in Resources */,
 			);
@@ -291,7 +295,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 26MR659L47;
+				DEVELOPMENT_TEAM = 2P44D5B93M;
 				INFOPLIST_FILE = Weather/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -309,7 +313,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 26MR659L47;
+				DEVELOPMENT_TEAM = 2P44D5B93M;
 				INFOPLIST_FILE = Weather/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

@@ -41,6 +41,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IQJ-bB-mTi">
+                                <rect key="frame" x="76" y="49" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="aCd-Gc-wAW"/>
+                                    <constraint firstAttribute="width" constant="50" id="rQz-QY-TtM"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -52,12 +59,15 @@
                             <constraint firstItem="rfC-dg-aEU" firstAttribute="top" secondItem="Ks1-HP-iKx" secondAttribute="bottom" constant="10" id="TUd-uw-hqC"/>
                             <constraint firstItem="CJZ-ti-COE" firstAttribute="top" secondItem="ueW-hP-n6G" secondAttribute="bottom" constant="10" id="aFW-Ug-AsQ"/>
                             <constraint firstItem="Ks1-HP-iKx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="bRT-Gh-ybV"/>
+                            <constraint firstItem="Ks1-HP-iKx" firstAttribute="leading" secondItem="IQJ-bB-mTi" secondAttribute="trailing" constant="10" id="gLG-z6-lQX"/>
+                            <constraint firstItem="IQJ-bB-mTi" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="29" id="ygS-4M-kvu"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="CityName" id="fyG-6W-aEw"/>
                     <connections>
                         <outlet property="humidityLabel" destination="CJZ-ti-COE" id="VuD-C4-RQU"/>
+                        <outlet property="iconImage" destination="IQJ-bB-mTi" id="1wL-vN-r4y"/>
                         <outlet property="maxMinTempLabel" destination="ueW-hP-n6G" id="0js-dr-7Kv"/>
                         <outlet property="tempLabel" destination="rfC-dg-aEU" id="wtf-Z9-UTm"/>
                         <outlet property="weatherLabel" destination="Ks1-HP-iKx" id="ztq-7m-oTC"/>
@@ -75,9 +85,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="eWk-pk-bKC">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="city" textLabel="ZzJ-bs-NvD" style="IBUITableViewCellStyleDefault" id="PjA-KD-3au">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PjA-KD-3au" id="mYG-P8-YEX">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -100,6 +115,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Select the CIty" id="0It-s0-8Gb"/>
+                    <connections>
+                        <outlet property="searchBar" destination="eWk-pk-bKC" id="8uP-xF-0MD"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IF0-UN-LAS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

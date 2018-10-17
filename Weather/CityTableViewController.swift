@@ -8,36 +8,80 @@
 
 import UIKit
 
-class CityTableViewController: UITableViewController {
+class CityTableViewController: UITableViewController , UISearchBarDelegate{
     
-    var cities = ["Kusatsu"]
+//    var cities = ["Kusatsu", "Taipei", "Seoul", "Kyoto", "Yellowknife"]
+    var cities = [String]()
+    var searchResults:[String] = []
+    var searchController = UISearchController()
 
+    @IBOutlet weak var searchBar: UISearchBar!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        searchBar.delegate = self as! UISearchBarDelegate
+        searchBar.enablesReturnKeyAutomatically = false
+        
+        let json = loadJson()
+        parse(json: json!)
+        searchResults = cities
+        tableView.reloadData()
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return cities.count
+        return searchResults.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "city", for: indexPath)
-        cell.textLabel?.text = cities[indexPath.row]
+        cell.textLabel?.text = searchResults[indexPath.row]
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let vc = storyboard?.instantiateViewController(withIdentifier: "detail") as? ViewController {
-            vc.cityname = cities[indexPath.row]
+            vc.cityname = searchResults[indexPath.row]
             navigationController?.pushViewController(vc, animated: true)
         }
+    }
+    
+    func parse(json: JSON) {
+        for city in json.arrayValue {
+            let name = city["name"].stringValue
+            cities.append(name)
+        }
+        tableView.reloadData()
+    }
+    
+    func loadJson() -> JSON? {
+        let path = Bundle.main.path(forResource: "city.list", ofType: "json")
+        do{
+            let jsonStr = try String(contentsOfFile: path!)
+            let json =  JSON.init(parseJSON: jsonStr)
+            return json
+        } catch{
+            return nil
+        }
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.endEditing(true)
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        searchResults.removeAll()
+        if(searchBar.text == "") {
+            searchResults = cities
+        } else {
+            for city in cities {
+                if let range = city.range(of: searchBar.text!) {
+                    searchResults.append(city)
+                }
+            }
+        }
+        tableView.reloadData()
     }
 
     /*
