@@ -14,6 +14,7 @@ import UIKit
 class ViewController: UIViewController {
     
     var cityname = ""
+    var cityid = ""
     @IBOutlet weak var weatherLabel: UILabel!
     @IBOutlet weak var tempLabel: UILabel!
     @IBOutlet weak var humidityLabel: UILabel!
@@ -21,13 +22,16 @@ class ViewController: UIViewController {
     var urlString: String = ""
     @IBOutlet weak var iconImage: UIImageView!
     @IBOutlet weak var imageVIew: UIImageView!
+    var cityids:[String] = []
+    var cities = [String]()
     
     var pictures = ["sunny.jpg", "cloud.jpg", "rain.jpg", "snow.jpg"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        urlString = "https://api.openweathermap.org/data/2.5/weather?q=" + cityname + "&appid=e56c905428db86b3e78bd8a5064ef029"
-//        urlString = "https://samples.openweathermap.org/data/2.5/weather?q=London,uk&appid=b6907d289e10d714a6e88b30761fae22"
+        let index = cities.index(of: cityname)!
+        self.cityid = cityids[index]
+        urlString = "https://api.openweathermap.org/data/2.5/weather?id=" + cityid + "&appid=e56c905428db86b3e78bd8a5064ef029"
         openweathermap()
         title = cityname
     }

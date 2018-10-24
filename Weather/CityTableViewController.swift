@@ -14,6 +14,8 @@ class CityTableViewController: UITableViewController , UISearchBarDelegate{
     var cities = [String]()
     var searchResults:[String] = []
     var searchController = UISearchController()
+    var cityid:[String] = []
+    var idresult:[String] = []
 
     @IBOutlet weak var searchBar: UISearchBar!
     
@@ -43,6 +45,8 @@ class CityTableViewController: UITableViewController , UISearchBarDelegate{
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let vc = storyboard?.instantiateViewController(withIdentifier: "detail") as? ViewController {
             vc.cityname = searchResults[indexPath.row]
+            vc.cities = self.cities
+            vc.cityids = self.cityid
             navigationController?.pushViewController(vc, animated: true)
         }
     }
@@ -50,7 +54,9 @@ class CityTableViewController: UITableViewController , UISearchBarDelegate{
     func parse(json: JSON) {
         for city in json.arrayValue {
             let name = city["name"].stringValue
+            let id = city["id"].stringValue
             cities.append(name)
+            cityid.append(id)
         }
         tableView.reloadData()
     }
@@ -77,6 +83,9 @@ class CityTableViewController: UITableViewController , UISearchBarDelegate{
         } else {
             for city in cities {
                 if let range = city.range(of: searchBar.text!) {
+//                    let index = cities.index(of: city)
+//                    idresult.append(cityid[index!])
+//                    print(index)
                     searchResults.append(city)
                 }
             }
