@@ -13,9 +13,12 @@ class CityTableViewController: UITableViewController , UISearchBarDelegate{
 //    var cities = ["Kusatsu", "Taipei", "Seoul", "Kyoto", "Yellowknife"]
     var cities = [String]()
     var searchResults:[String] = []
+    var tempResults:[String] = []
+    var previoustext = ""
     var searchController = UISearchController()
     var cityid:[String] = []
     var idresult:[String] = []
+    var deleted = false
 
     @IBOutlet weak var searchBar: UISearchBar!
     
@@ -81,14 +84,28 @@ class CityTableViewController: UITableViewController , UISearchBarDelegate{
         if(searchBar.text == "") {
             searchResults = cities
         } else {
-            for city in cities {
-                if let range = city.range(of: searchBar.text!) {
-//                    let index = cities.index(of: city)
-//                    idresult.append(cityid[index!])
-//                    print(index)
-                    searchResults.append(city)
+            if let word = searchBar.text!.range(of: previoustext){
+                deleted = false
+                print(deleted)
+            }else{
+                deleted = true
+                print(deleted)
+            }
+            if deleted {
+                tempResults = searchResults
+                for city in tempResults {
+                    if let range = city.range(of: searchBar.text!) {
+                        searchResults.append(city)
+                    }
+                }
+            }else{
+                for city in cities {
+                    if let range = city.range(of: searchBar.text!) {
+                        searchResults.append(city)
+                    }
                 }
             }
+            previoustext = searchBar.text!
         }
         tableView.reloadData()
     }
