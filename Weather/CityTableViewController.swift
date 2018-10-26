@@ -10,7 +10,6 @@ import UIKit
 
 class CityTableViewController: UITableViewController , UISearchBarDelegate{
     
-//    var cities = ["Kusatsu", "Taipei", "Seoul", "Kyoto", "Yellowknife"]
     var cities = [String]()
     var searchResults:[String] = []
     var tempResults:[String] = []
@@ -19,6 +18,7 @@ class CityTableViewController: UITableViewController , UISearchBarDelegate{
     var cityid:[String] = []
     var idresult:[String] = []
     var deleted = false
+    var dic_city = [String:Array<String>]()
 
     @IBOutlet weak var searchBar: UISearchBar!
     
@@ -55,11 +55,23 @@ class CityTableViewController: UITableViewController , UISearchBarDelegate{
     }
     
     func parse(json: JSON) {
+        var keys:[String] = []
+        var arrays:[Array<String>] = []
         for city in json.arrayValue {
             let name = city["name"].stringValue
+            let firstletter = String(name.prefix(1))
             let id = city["id"].stringValue
+            if let index = keys.index(of: firstletter) {
+                arrays[index].append(name)
+            }else{
+                keys.append(firstletter)
+                arrays.append([name])
+            }
             cities.append(name)
             cityid.append(id)
+        }
+        for key in keys {
+            dic_city[key] = arrays[keys.index(of: key)!]
         }
         tableView.reloadData()
     }
@@ -84,25 +96,10 @@ class CityTableViewController: UITableViewController , UISearchBarDelegate{
         if(searchBar.text == "") {
             searchResults = cities
         } else {
-            if let word = searchBar.text!.range(of: previoustext){
-                deleted = false
-                print(deleted)
-            }else{
-                deleted = true
-                print(deleted)
-            }
-            if deleted {
-                tempResults = searchResults
-                for city in tempResults {
-                    if let range = city.range(of: searchBar.text!) {
-                        searchResults.append(city)
-                    }
-                }
-            }else{
-                for city in cities {
-                    if let range = city.range(of: searchBar.text!) {
-                        searchResults.append(city)
-                    }
+            let firstletter = String((searchBar.text!.prefix(1)))
+            for city in dic_city[firstletter]! {
+                if let range = city.range(of: searchBar.text!) {
+                    searchResults.append(city)
                 }
             }
             previoustext = searchBar.text!
