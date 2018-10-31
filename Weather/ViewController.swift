@@ -62,9 +62,9 @@ class ViewController: UIViewController {
         let humidity = main["humidity"].stringValue
         let weatherjson = json["weather"].arrayValue
         let weatherjson2 = weatherjson[0]
-        let weather = weatherjson2["main"].stringValue
+        let weather = weatherjson2["description"].stringValue
         let icon = weatherjson2["icon"].stringValue
-        let url = NSURL(string: "https://openweathermap.org/img/w/" + icon + ".png")
+        let url = NSURL(string: "https://openweathermap.org/img/w/" + String(icon.prefix(2)) + "d.png")
         let max = Int(max_k - 273.15)
         let min = Int(min_k - 273.15)
         let temp = Int(temp_k - 273.15)
@@ -72,7 +72,7 @@ class ViewController: UIViewController {
             self.tempLabel.text = String(temp) + "℃"
             self.maxMinTempLabel.text = String(max) + "℃ / " + String(min) + "℃"
             self.humidityLabel.text = humidity + "%"
-            self.weatherLabel.text = weather
+            self.weatherLabel.text = weather.capitalized
             
             let data = try? Data(contentsOf: url as! URL)
             
@@ -91,9 +91,14 @@ class ViewController: UIViewController {
                 self.imageVIew.image = UIImage(named: self.pictures[3])
             }else{
                 self.imageVIew.image = UIImage(named: self.pictures[2])
+                self.tempLabel.textColor = UIColor.white
+                self.maxMinTempLabel.textColor = UIColor.white
+                self.humidityLabel.textColor = UIColor.white
+                self.weatherLabel.textColor = UIColor.white
             }
         }
     }
 
 }
+
 
