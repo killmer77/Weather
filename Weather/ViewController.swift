@@ -15,6 +15,9 @@ class ViewController: UIViewController {
     
     var cityname = ""
     var cityid = ""
+    var fromMap = false
+    var lon = 0.0
+    var lat = 0.0
     @IBOutlet weak var weatherLabel: UILabel!
     @IBOutlet weak var tempLabel: UILabel!
     @IBOutlet weak var humidityLabel: UILabel!
@@ -29,11 +32,15 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let index = cities.index(of: cityname)!
-        self.cityid = cityids[index]
-        urlString = "https://api.openweathermap.org/data/2.5/weather?id=" + cityid + "&appid=e56c905428db86b3e78bd8a5064ef029"
-        openweathermap()
-        title = cityname
+        if fromMap {
+            self.urlString = "https://api.openweathermap.org/data/2.5/weather?lat=\(self.lat)&lon=\(self.lon)&appid=e56c905428db86b3e78bd8a5064ef029"
+            openweathermap()
+        }else{
+            let index = cities.index(of: cityname)!
+            self.cityid = cityids[index]
+            urlString = "https://api.openweathermap.org/data/2.5/weather?id=\(cityid)&appid=e56c905428db86b3e78bd8a5064ef029"
+            openweathermap()
+        }
     }
     
     func openweathermap(){
@@ -68,11 +75,14 @@ class ViewController: UIViewController {
         let max = Int(max_k - 273.15)
         let min = Int(min_k - 273.15)
         let temp = Int(temp_k - 273.15)
+        let name = json["name"].stringValue
+        
         DispatchQueue.main.async {
             self.tempLabel.text = String(temp) + "℃"
             self.maxMinTempLabel.text = String(max) + "℃ / " + String(min) + "℃"
             self.humidityLabel.text = humidity + "%"
             self.weatherLabel.text = weather.capitalized
+            self.title = name
             
             let data = try? Data(contentsOf: url as! URL)
             

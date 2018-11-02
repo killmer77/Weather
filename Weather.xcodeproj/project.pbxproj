@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		6642AD4B2179A4FC0013411F /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6642AD4A2179A4FC0013411F /* SwiftyJSON.swift */; };
 		D13CFE3F2176F7AA00151B0F /* city.list.json in Resources */ = {isa = PBXBuildFile; fileRef = D13CFE3E2176F7A900151B0F /* city.list.json */; };
+		D14152E3218C086E006FF145 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14152E2218C086E006FF145 /* MapViewController.swift */; };
 		D1424BAB217999C6009AF39E /* snow.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D1424BA7217999C6009AF39E /* snow.jpg */; };
 		D1424BAC217999C6009AF39E /* sunny.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D1424BA8217999C6009AF39E /* sunny.jpg */; };
 		D1424BAD217999C6009AF39E /* cloud.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D1424BA9217999C6009AF39E /* cloud.jpg */; };
@@ -24,6 +25,7 @@
 /* Begin PBXFileReference section */
 		6642AD4A2179A4FC0013411F /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		D13CFE3E2176F7A900151B0F /* city.list.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = city.list.json; sourceTree = "<group>"; };
+		D14152E2218C086E006FF145 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		D1424BA7217999C6009AF39E /* snow.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = snow.jpg; sourceTree = "<group>"; };
 		D1424BA8217999C6009AF39E /* sunny.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sunny.jpg; sourceTree = "<group>"; };
 		D1424BA9217999C6009AF39E /* cloud.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cloud.jpg; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 				FF3A6D7D216DB41C002210E9 /* AppDelegate.swift */,
 				FF3A6D7F216DB41C002210E9 /* ViewController.swift */,
 				FF3A6D81216DB41C002210E9 /* Main.storyboard */,
+				D14152E2218C086E006FF145 /* MapViewController.swift */,
 				6642AD4A2179A4FC0013411F /* SwiftyJSON.swift */,
 				D1CF9EBB216DBA9E001126CD /* CityTableViewController.swift */,
 				FF3A6D84216DB41E002210E9 /* Assets.xcassets */,
@@ -172,6 +175,7 @@
 				D1CF9EBC216DBA9E001126CD /* CityTableViewController.swift in Sources */,
 				FF3A6D80216DB41C002210E9 /* ViewController.swift in Sources */,
 				FF3A6D7E216DB41C002210E9 /* AppDelegate.swift in Sources */,
+				D14152E3218C086E006FF145 /* MapViewController.swift in Sources */,
 				6642AD4B2179A4FC0013411F /* SwiftyJSON.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
