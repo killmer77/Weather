@@ -27,6 +27,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var imageVIew: UIImageView!
     var cityids:[String] = []
     var cities = [String]()
+    var fromhome = false
     
     var pictures = ["sunny.jpg", "cloud.jpg", "rain.jpg", "snow.jpg"]
     
@@ -35,12 +36,34 @@ class ViewController: UIViewController {
         if fromMap {
             self.urlString = "https://api.openweathermap.org/data/2.5/weather?lat=\(self.lat)&lon=\(self.lon)&appid=e56c905428db86b3e78bd8a5064ef029"
             openweathermap()
+        }else if fromhome{
+            urlString = "https://api.openweathermap.org/data/2.5/weather?id=\(cityid)&appid=e56c905428db86b3e78bd8a5064ef029"
+            openweathermap()
         }else{
             let index = cities.index(of: cityname)!
             self.cityid = cityids[index]
             urlString = "https://api.openweathermap.org/data/2.5/weather?id=\(cityid)&appid=e56c905428db86b3e78bd8a5064ef029"
             openweathermap()
         }
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addTapped))
+    }
+    
+    @objc func addTapped(){
+        let userDefaults = UserDefaults.standard
+        var homecities : [String] = []
+        var homenames : [String] = []
+        if let tempArray : [String] = userDefaults.object(forKey: "home") as? [String]{
+            userDefaults.removeObject(forKey: "home")
+            homenames = (userDefaults.object(forKey: "name") as? [String]) ?? []
+            homecities = tempArray
+        }
+        homecities.append(cityid)
+        homenames.append(cityname)
+        userDefaults.set(homecities, forKey: "home")
+        userDefaults.set(homenames, forKey: "name")
+        print(homecities)
+        userDefaults.synchronize()
     }
     
     func openweathermap(){
