@@ -10,26 +10,19 @@ import UIKit
 
 class HomeCitiesTableViewController: UITableViewController {
     
-    var homecities : [String] = []
     let userDefaults = UserDefaults.standard
+    var homecities : [String] = []
     var homenames : [String] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        if let tempArray : [String] = userDefaults.object(forKey: "home") as? [String]{
-            self.homecities = tempArray
-            print(tempArray)
-            print(homecities)
-        }
-        if let tempnames : [String] = userDefaults.object(forKey: "name") as? [String]{
-            self.homenames = tempnames
-            print(tempnames)
-            print(homenames)
-        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.homecities = userDefaults.object(forKey: "home") as? [String] ?? []
+        self.homenames = userDefaults.object(forKey: "name") as? [String] ?? []
         tableView.reloadData()
     }
-
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {

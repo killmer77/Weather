@@ -21,6 +21,8 @@
 		FF3A6D83216DB41C002210E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF3A6D81216DB41C002210E9 /* Main.storyboard */; };
 		FF3A6D85216DB41E002210E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF3A6D84216DB41E002210E9 /* Assets.xcassets */; };
 		FF3A6D88216DB41E002210E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF3A6D86216DB41E002210E9 /* LaunchScreen.storyboard */; };
+		FFA7A2412192B04A003E62E2 /* Kang.png in Resources */ = {isa = PBXBuildFile; fileRef = FFA7A23F2192B04A003E62E2 /* Kang.png */; };
+		FFA7A2422192B04A003E62E2 /* Joon.png in Resources */ = {isa = PBXBuildFile; fileRef = FFA7A2402192B04A003E62E2 /* Joon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		FF3A6D84216DB41E002210E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FF3A6D87216DB41E002210E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FF3A6D89216DB41E002210E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FFA7A23F2192B04A003E62E2 /* Kang.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Kang.png; sourceTree = "<group>"; };
+		FFA7A2402192B04A003E62E2 /* Joon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Joon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +98,8 @@
 				FF3A6D86216DB41E002210E9 /* LaunchScreen.storyboard */,
 				FF3A6D89216DB41E002210E9 /* Info.plist */,
 				D13CFE3E2176F7A900151B0F /* city.list.json */,
+				FFA7A2402192B04A003E62E2 /* Joon.png */,
+				FFA7A23F2192B04A003E62E2 /* Kang.png */,
 				D1424BA6217999C6009AF39E /* WeatherBackgroud */,
 			);
 			path = Weather;
@@ -157,12 +163,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFA7A2412192B04A003E62E2 /* Kang.png in Resources */,
 				FF3A6D88216DB41E002210E9 /* LaunchScreen.storyboard in Resources */,
 				D1424BAE217999C6009AF39E /* rain.jpg in Resources */,
 				D1424BAC217999C6009AF39E /* sunny.jpg in Resources */,
 				D1424BAD217999C6009AF39E /* cloud.jpg in Resources */,
 				D1424BAB217999C6009AF39E /* snow.jpg in Resources */,
 				D13CFE3F2176F7AA00151B0F /* city.list.json in Resources */,
+				FFA7A2422192B04A003E62E2 /* Joon.png in Resources */,
 				FF3A6D85216DB41E002210E9 /* Assets.xcassets in Resources */,
 				FF3A6D83216DB41C002210E9 /* Main.storyboard in Resources */,
 			);

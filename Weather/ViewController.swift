@@ -64,6 +64,13 @@ class ViewController: UIViewController {
         userDefaults.set(homenames, forKey: "name")
         print(homecities)
         userDefaults.synchronize()
+        let alert = UIAlertController(title: "Add", message: "\(cityname) is added", preferredStyle: UIAlertController.Style.alert)
+        
+       
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+        
+      
+        self.present(alert, animated: true, completion: nil)
     }
     
     func openweathermap(){
