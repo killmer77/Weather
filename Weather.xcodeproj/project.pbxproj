@@ -16,6 +16,8 @@
 		D1424BAE217999C6009AF39E /* rain.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D1424BAA217999C6009AF39E /* rain.jpg */; };
 		D1CF9EBC216DBA9E001126CD /* CityTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1CF9EBB216DBA9E001126CD /* CityTableViewController.swift */; };
 		D1F7358321929F9B00355893 /* HomeCitiesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F7358221929F9B00355893 /* HomeCitiesTableViewController.swift */; };
+		FF22DAF821954D1B00526CB6 /* Korean.strings in Resources */ = {isa = PBXBuildFile; fileRef = FF22DAFA21954D1B00526CB6 /* Korean.strings */; };
+		FF22DAFD21954DF800526CB6 /* Japanese.strings in Resources */ = {isa = PBXBuildFile; fileRef = FF22DAFF21954DF800526CB6 /* Japanese.strings */; };
 		FF3A6D7E216DB41C002210E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3A6D7D216DB41C002210E9 /* AppDelegate.swift */; };
 		FF3A6D80216DB41C002210E9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3A6D7F216DB41C002210E9 /* ViewController.swift */; };
 		FF3A6D83216DB41C002210E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF3A6D81216DB41C002210E9 /* Main.storyboard */; };
@@ -33,6 +35,14 @@
 		D1424BAA217999C6009AF39E /* rain.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = rain.jpg; sourceTree = "<group>"; };
 		D1CF9EBB216DBA9E001126CD /* CityTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityTableViewController.swift; sourceTree = "<group>"; };
 		D1F7358221929F9B00355893 /* HomeCitiesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCitiesTableViewController.swift; sourceTree = "<group>"; };
+		FF22DAF021954C1B00526CB6 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
+		FF22DAF121954C1C00526CB6 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		FF22DAF221954C2500526CB6 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Main.strings; sourceTree = "<group>"; };
+		FF22DAF321954C2600526CB6 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		FF22DAF421954C2F00526CB6 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main.strings"; sourceTree = "<group>"; };
+		FF22DAF521954C3000526CB6 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		FF22DAF921954D1B00526CB6 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Korean.strings; sourceTree = "<group>"; };
+		FF22DAFE21954DF800526CB6 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Japanese.strings; sourceTree = "<group>"; };
 		FF3A6D7A216DB41C002210E9 /* Weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF3A6D7D216DB41C002210E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FF3A6D7F216DB41C002210E9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -95,6 +105,8 @@
 				D13CFE3E2176F7A900151B0F /* city.list.json */,
 				FF3A6D84216DB41E002210E9 /* Assets.xcassets */,
 				D1424BA6217999C6009AF39E /* WeatherBackgroud */,
+				FF22DAFA21954D1B00526CB6 /* Korean.strings */,
+				FF22DAFF21954DF800526CB6 /* Japanese.strings */,
 			);
 			path = Weather;
 			sourceTree = "<group>";
@@ -163,8 +175,10 @@
 				D1424BAD217999C6009AF39E /* cloud.jpg in Resources */,
 				D1424BAB217999C6009AF39E /* snow.jpg in Resources */,
 				D13CFE3F2176F7AA00151B0F /* city.list.json in Resources */,
+				FF22DAF821954D1B00526CB6 /* Korean.strings in Resources */,
 				FF3A6D85216DB41E002210E9 /* Assets.xcassets in Resources */,
 				FF3A6D83216DB41C002210E9 /* Main.storyboard in Resources */,
+				FF22DAFD21954DF800526CB6 /* Japanese.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -187,10 +201,29 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		FF22DAFA21954D1B00526CB6 /* Korean.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FF22DAF921954D1B00526CB6 /* ko */,
+			);
+			name = Korean.strings;
+			sourceTree = "<group>";
+		};
+		FF22DAFF21954DF800526CB6 /* Japanese.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FF22DAFE21954DF800526CB6 /* ja */,
+			);
+			name = Japanese.strings;
+			sourceTree = "<group>";
+		};
 		FF3A6D81216DB41C002210E9 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				FF3A6D82216DB41C002210E9 /* Base */,
+				FF22DAF021954C1B00526CB6 /* ja */,
+				FF22DAF221954C2500526CB6 /* ko */,
+				FF22DAF421954C2F00526CB6 /* zh-Hant */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -199,6 +232,9 @@
 			isa = PBXVariantGroup;
 			children = (
 				FF3A6D87216DB41E002210E9 /* Base */,
+				FF22DAF121954C1C00526CB6 /* ja */,
+				FF22DAF321954C2600526CB6 /* ko */,
+				FF22DAF521954C3000526CB6 /* zh-Hant */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -210,6 +246,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -271,6 +308,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

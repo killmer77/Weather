@@ -1,0 +1,11 @@
+/* 
+  Korean.strings
+  Weather
+
+  Created by kang haejoon on 2018/11/09.
+  Copyright © 2018 kang haejoon. All rights reserved.
+*/
+
+"cityList" = "도시목록";
+"Map" = "지도";
+//한국어용

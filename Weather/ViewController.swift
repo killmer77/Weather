@@ -46,7 +46,10 @@ class ViewController: UIViewController {
             openweathermap()
         }
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addTapped))
+        if !fromhome {
+//            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addTapped))
+            navigationItem.rightBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: .save, target: self, action: #selector(addTapped))
+        }
     }
     
     @objc func addTapped(){
@@ -106,6 +109,7 @@ class ViewController: UIViewController {
         let min = Int(min_k - 273.15)
         let temp = Int(temp_k - 273.15)
         let name = json["name"].stringValue
+        self.cityname = name
         
         DispatchQueue.main.async {
             self.tempLabel.text = String(temp) + "℃"
