@@ -240,7 +240,7 @@
         <scene sceneID="BBB-kz-PpR">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cC5-pS-nTB" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="City List" selectedImage="listNoColor.png" id="NZE-fK-Mkp"/>
+                    <tabBarItem key="tabBarItem" title="City List" image="listNoColor2" selectedImage="listNoColor2" id="NZE-fK-Mkp"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bDi-Kk-ggq">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -259,7 +259,7 @@
         <scene sceneID="5Zg-kl-mSt">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XHJ-te-mxg" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Map" selectedImage="Joon.png" id="ikX-GR-QFV"/>
+                    <tabBarItem key="tabBarItem" title="Map" image="Joon" selectedImage="Joon" id="ikX-GR-QFV"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fJj-q1-Dd4">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -295,7 +295,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Joon.png" width="25" height="25"/>
-        <image name="listNoColor.png" width="30" height="30"/>
+        <image name="Joon" width="25" height="25"/>
+        <image name="listNoColor2" width="50" height="50"/>
     </resources>
 </document>
