@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		6642AD4B2179A4FC0013411F /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6642AD4A2179A4FC0013411F /* SwiftyJSON.swift */; };
+		C4F4B521219540F00024D5F3 /* list.png in Resources */ = {isa = PBXBuildFile; fileRef = C4F4B520219540F00024D5F3 /* list.png */; };
+		C4F4B523219541AE0024D5F3 /* list.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C4F4B522219541AE0024D5F3 /* list.jpg */; };
+		C4F4B525219544450024D5F3 /* listNoColor.png in Resources */ = {isa = PBXBuildFile; fileRef = C4F4B524219544450024D5F3 /* listNoColor.png */; };
 		D13CFE3F2176F7AA00151B0F /* city.list.json in Resources */ = {isa = PBXBuildFile; fileRef = D13CFE3E2176F7A900151B0F /* city.list.json */; };
 		D14152E3218C086E006FF145 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14152E2218C086E006FF145 /* MapViewController.swift */; };
 		D1424BAB217999C6009AF39E /* snow.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D1424BA7217999C6009AF39E /* snow.jpg */; };
@@ -27,6 +30,9 @@
 
 /* Begin PBXFileReference section */
 		6642AD4A2179A4FC0013411F /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		C4F4B520219540F00024D5F3 /* list.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = list.png; sourceTree = "<group>"; };
+		C4F4B522219541AE0024D5F3 /* list.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = list.jpg; sourceTree = "<group>"; };
+		C4F4B524219544450024D5F3 /* listNoColor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = listNoColor.png; sourceTree = "<group>"; };
 		D13CFE3E2176F7A900151B0F /* city.list.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = city.list.json; sourceTree = "<group>"; };
 		D14152E2218C086E006FF145 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		D1424BA7217999C6009AF39E /* snow.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = snow.jpg; sourceTree = "<group>"; };
@@ -100,6 +106,9 @@
 				D13CFE3E2176F7A900151B0F /* city.list.json */,
 				FFA7A2402192B04A003E62E2 /* Joon.png */,
 				FFA7A23F2192B04A003E62E2 /* Kang.png */,
+				C4F4B522219541AE0024D5F3 /* list.jpg */,
+				C4F4B524219544450024D5F3 /* listNoColor.png */,
+				C4F4B520219540F00024D5F3 /* list.png */,
 				D1424BA6217999C6009AF39E /* WeatherBackgroud */,
 			);
 			path = Weather;
@@ -168,10 +177,13 @@
 				D1424BAE217999C6009AF39E /* rain.jpg in Resources */,
 				D1424BAC217999C6009AF39E /* sunny.jpg in Resources */,
 				D1424BAD217999C6009AF39E /* cloud.jpg in Resources */,
+				C4F4B525219544450024D5F3 /* listNoColor.png in Resources */,
 				D1424BAB217999C6009AF39E /* snow.jpg in Resources */,
 				D13CFE3F2176F7AA00151B0F /* city.list.json in Resources */,
+				C4F4B523219541AE0024D5F3 /* list.jpg in Resources */,
 				FFA7A2422192B04A003E62E2 /* Joon.png in Resources */,
 				FF3A6D85216DB41E002210E9 /* Assets.xcassets in Resources */,
+				C4F4B521219540F00024D5F3 /* list.png in Resources */,
 				FF3A6D83216DB41C002210E9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

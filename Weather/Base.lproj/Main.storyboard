@@ -240,7 +240,7 @@
         <scene sceneID="BBB-kz-PpR">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cC5-pS-nTB" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="City List" selectedImage="Kang.png" id="NZE-fK-Mkp"/>
+                    <tabBarItem key="tabBarItem" title="City List" selectedImage="listNoColor.png" id="NZE-fK-Mkp"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bDi-Kk-ggq">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -296,6 +296,6 @@
     </scenes>
     <resources>
         <image name="Joon.png" width="25" height="25"/>
-        <image name="Kang.png" width="25" height="25"/>
+        <image name="listNoColor.png" width="30" height="30"/>
     </resources>
 </document>
