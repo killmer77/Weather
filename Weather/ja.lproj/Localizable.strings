@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  Weather
+
+  Created by 冨田悠斗 on 2018/11/14.
+  Copyright © 2018 kang haejoon. All rights reserved.
+*/
+
+"add" = "追加";
+"message" = "が追加されました";
+//日本語

@@ -67,7 +67,9 @@ class ViewController: UIViewController {
         userDefaults.set(homenames, forKey: "name")
         print(homecities)
         userDefaults.synchronize()
-        let alert = UIAlertController(title: "Add", message: "\(cityname) is added", preferredStyle: UIAlertController.Style.alert)
+        let add = NSLocalizedString("add", comment: "")
+        let message = NSLocalizedString("message", comment: "")
+        let alert = UIAlertController(title: add, message: cityname + message, preferredStyle: UIAlertController.Style.alert)
         
        
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
