@@ -26,6 +26,9 @@
 
 /* Begin PBXFileReference section */
 		6642AD4A2179A4FC0013411F /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		C449FE1C219BDD9500A4A109 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		C449FE1D219BDD9500A4A109 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		C449FE1E219BDD9600A4A109 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		D13CFE3E2176F7A900151B0F /* city.list.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = city.list.json; sourceTree = "<group>"; };
 		D14152E2218C086E006FF145 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		D1424BA7217999C6009AF39E /* snow.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = snow.jpg; sourceTree = "<group>"; };
@@ -156,6 +159,7 @@
 				ja,
 				ko,
 				"zh-Hant",
+				"zh-Hans",
 			);
 			mainGroup = FF3A6D71216DB41C002210E9;
 			productRefGroup = FF3A6D7B216DB41C002210E9 /* Products */;
@@ -210,6 +214,7 @@
 				D1ED38C8219BDABC009B2B72 /* ja */,
 				D1ED38C9219BDABC009B2B72 /* ko */,
 				D1ED38CA219BDABD009B2B72 /* zh-Hant */,
+				C449FE1E219BDD9600A4A109 /* zh-Hans */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -221,6 +226,7 @@
 				FF22DAF021954C1B00526CB6 /* ja */,
 				FF22DAF221954C2500526CB6 /* ko */,
 				FF22DAF421954C2F00526CB6 /* zh-Hant */,
+				C449FE1C219BDD9500A4A109 /* zh-Hans */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -232,6 +238,7 @@
 				FF22DAF121954C1C00526CB6 /* ja */,
 				FF22DAF321954C2600526CB6 /* ko */,
 				FF22DAF521954C3000526CB6 /* zh-Hant */,
+				C449FE1D219BDD9500A4A109 /* zh-Hans */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
