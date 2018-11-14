@@ -19,17 +19,23 @@ class CityTableViewController: UITableViewController , UISearchBarDelegate{
     var idresult:[String] = []
     var deleted = false
     var dic_city = [String:Array<String>]()
+    let defaults = UserDefaults.standard
 
     @IBOutlet weak var searchBar: UISearchBar!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         searchBar.delegate = self as! UISearchBarDelegate
         searchBar.enablesReturnKeyAutomatically = false
         
-        let json = loadJson()
-        parse(json: json!)
+        if let cities = UserDefaults.standard.array(forKey: "Joon"){
+            self.cities = cities as! [String]
+            self.cityid = UserDefaults.standard.array(forKey: "Kang") as! [String]
+            self.dic_city = UserDefaults.standard.dictionary(forKey: "Key") as! [String : Array<String>]
+        }else{
+            let json = loadJson()
+            parse(json: json!)
+        }
         searchResults = cities
         tableView.reloadData()
     }
@@ -73,6 +79,9 @@ class CityTableViewController: UITableViewController , UISearchBarDelegate{
         for key in keys {
             dic_city[key] = arrays[keys.index(of: key)!]
         }
+        defaults.set(cities, forKey: "Joon")
+        defaults.set(cityid, forKey: "Kang")
+        defaults.set(dic_city, forKey: "Key")
         tableView.reloadData()
     }
     
