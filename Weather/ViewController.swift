@@ -29,6 +29,8 @@ class ViewController: UIViewController {
     var cities = [String]()
     var fromhome = false
     
+    let userDefaults = UserDefaults.standard
+    
     var pictures = ["sunny.jpg", "cloud.jpg", "rain.jpg", "snow.jpg"]
     
     override func viewDidLoad() {
@@ -46,14 +48,14 @@ class ViewController: UIViewController {
             openweathermap()
         }
         
-        if !fromhome {
-//            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addTapped))
+        let homenames = userDefaults.object(forKey: "name") as? [String] ?? []
+        
+        if !fromhome && !homenames.contains(cityname){
             navigationItem.rightBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: .save, target: self, action: #selector(addTapped))
         }
     }
     
     @objc func addTapped(){
-        let userDefaults = UserDefaults.standard
         var homecities : [String] = []
         var homenames : [String] = []
         if let tempArray : [String] = userDefaults.object(forKey: "home") as? [String]{
