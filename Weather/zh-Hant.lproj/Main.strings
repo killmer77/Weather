@@ -1,9 +1,9 @@
 
 /* Class = "UINavigationItem"; title = "Select the CIty"; ObjectID = "0It-s0-8Gb"; */
-"0It-s0-8Gb.title" = "Select the CIty";
+"0It-s0-8Gb.title" = "選擇城市";
 
 /* Class = "UINavigationItem"; title = "Map"; ObjectID = "BJl-TB-b0N"; */
-"BJl-TB-b0N.title" = "Map";
+"BJl-TB-b0N.title" = "地圖";
 
 /* Class = "UILabel"; text = "##％"; ObjectID = "CJZ-ti-COE"; */
 "CJZ-ti-COE.text" = "##％";
@@ -12,22 +12,22 @@
 "Ks1-HP-iKx.text" = "--";
 
 /* Class = "UITabBarItem"; title = "City List"; ObjectID = "NZE-fK-Mkp"; */
-"NZE-fK-Mkp.title" = "City List";
+"NZE-fK-Mkp.title" = "城市列表";
 
 /* Class = "UILabel"; text = "Title"; ObjectID = "TXa-Ke-jFI"; */
-"TXa-Ke-jFI.text" = "Title";
+"TXa-Ke-jFI.text" = "標題";
 
 /* Class = "UILabel"; text = "Title"; ObjectID = "ZzJ-bs-NvD"; */
-"ZzJ-bs-NvD.text" = "Title";
+"ZzJ-bs-NvD.text" = "標題";
 
 /* Class = "UINavigationItem"; title = "Home Cities"; ObjectID = "agb-Ax-GV1"; */
-"agb-Ax-GV1.title" = "Home Cities";
+"agb-Ax-GV1.title" = "我的最愛";
 
 /* Class = "UINavigationItem"; title = "CityName"; ObjectID = "fyG-6W-aEw"; */
-"fyG-6W-aEw.title" = "CityName";
+"fyG-6W-aEw.title" = "城市名稱";
 
 /* Class = "UITabBarItem"; title = "Map"; ObjectID = "ikX-GR-QFV"; */
-"ikX-GR-QFV.title" = "Map";
+"ikX-GR-QFV.title" = "地圖";
 
 /* Class = "UILabel"; text = "##℃"; ObjectID = "rfC-dg-aEU"; */
 "rfC-dg-aEU.text" = "##℃";
