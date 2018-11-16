@@ -33,8 +33,23 @@ class ViewController: UIViewController {
     
     var pictures = ["sunny.jpg", "cloud.jpg", "rain.jpg", "snow.jpg"]
     
+    var activityIndicatorView = UIActivityIndicatorView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        //loading
+        let screensize = UIScreen.main.bounds.size
+        let navi = UIApplication.shared.statusBarFrame.size.height
+        let center = CGPoint(x: screensize.width / 2, y: (screensize.height / 2))
+        activityIndicatorView.center = center
+        activityIndicatorView.style = .whiteLarge
+        activityIndicatorView.color = .gray
+        view.addSubview(activityIndicatorView)
+        activityIndicatorView.startAnimating()
+        //loading
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         if fromMap {
             self.urlString = "https://api.openweathermap.org/data/2.5/weather?lat=\(self.lat)&lon=\(self.lon)&appid=e56c905428db86b3e78bd8a5064ef029"
             openweathermap()
@@ -144,6 +159,7 @@ class ViewController: UIViewController {
                 self.humidityLabel.textColor = UIColor.white
                 self.weatherLabel.textColor = UIColor.white
             }
+            self.activityIndicatorView.stopAnimating()
         }
     }
 

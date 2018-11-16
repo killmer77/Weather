@@ -20,14 +20,29 @@ class CityTableViewController: UITableViewController , UISearchBarDelegate{
     var deleted = false
     var dic_city = [String:Array<String>]()
     let defaults = UserDefaults.standard
+    var activityIndicatorView = UIActivityIndicatorView()
 
     @IBOutlet weak var searchBar: UISearchBar!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //loading
+        let screensize = UIScreen.main.bounds.size
+        let navi = UIApplication.shared.statusBarFrame.size.height
+        let search = self.searchBar.frame.height
+        let center = CGPoint(x: screensize.width / 2, y: (screensize.height / 2) - navi - search)
+        activityIndicatorView.center = center
+        activityIndicatorView.style = .whiteLarge
+        activityIndicatorView.color = .gray
+        view.addSubview(activityIndicatorView)
+        activityIndicatorView.startAnimating()
+        //loading
+        
         searchBar.delegate = self as! UISearchBarDelegate
         searchBar.enablesReturnKeyAutomatically = false
-        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         if let cities = UserDefaults.standard.array(forKey: "Joon"){
             self.cities = cities as! [String]
             self.cityid = UserDefaults.standard.array(forKey: "Kang") as! [String]
@@ -37,6 +52,9 @@ class CityTableViewController: UITableViewController , UISearchBarDelegate{
             parse(json: json!)
         }
         searchResults = cities
+        DispatchQueue.main.async {
+            self.activityIndicatorView.stopAnimating()
+        }
         tableView.reloadData()
     }
 
@@ -102,6 +120,15 @@ class CityTableViewController: UITableViewController , UISearchBarDelegate{
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         searchResults.removeAll()
+        
+        guard (searchBar.text?.isAlphanumeric())! else {
+            searchBar.text = ""
+            let alert = UIAlertController(title: "Invalid Letter", message: nil, preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            return
+        }
+        
         if(searchBar.text == "") {
             searchResults = cities
         } else {
@@ -161,4 +188,10 @@ class CityTableViewController: UITableViewController , UISearchBarDelegate{
     }
     */
 
+}
+
+extension String {
+    func isAlphanumeric() -> Bool {
+        return NSPredicate(format: "SELF MATCHES %@", "[a-zA-Z0-9]+").evaluate(with: self)
+    }
 }
