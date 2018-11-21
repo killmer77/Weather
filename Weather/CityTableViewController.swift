@@ -38,7 +38,7 @@ class CityTableViewController: UITableViewController , UISearchBarDelegate{
         activityIndicatorView.startAnimating()
         //loading
         
-        searchBar.delegate = self as! UISearchBarDelegate
+        searchBar.delegate = self as UISearchBarDelegate
         searchBar.enablesReturnKeyAutomatically = false
     }
     
@@ -121,26 +121,47 @@ class CityTableViewController: UITableViewController , UISearchBarDelegate{
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         searchResults.removeAll()
         
-        guard (searchBar.text?.isAlphanumeric())! else {
-            searchBar.text = ""
-            let alert = UIAlertController(title: "Invalid Letter", message: nil, preferredStyle: UIAlertController.Style.alert)
-            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
+        let searchwords = searchBar.text!.replacingOccurrences(of: " ", with: "") 
+        
+        guard searchwords.count > 0 else {
+            searchResults = cities
+            tableView.reloadData()
             return
         }
         
-        if(searchBar.text == "") {
+        guard searchwords.count != 0 else {
             searchResults = cities
-        } else {
+            tableView.reloadData()
+            return
+        }
+        
+        if searchwords.count > 0{
+            guard searchwords.isAlphabetic() else {
+                searchBar.text = ""
+                let invalid = NSLocalizedString("invalid", comment: "")
+                let alert = UIAlertController(title: invalid, message: nil, preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+                return
+        
+            }
+        }
+        
+        if searchBar.text != "" {
             let firstletter = String((searchBar.text!.prefix(1)))
             for city in dic_city[firstletter]! {
-                if let range = city.range(of: searchBar.text!) {
+                if let _ = city.range(of: searchBar.text!) {
                     searchResults.append(city)
                 }
             }
             previoustext = searchBar.text!
         }
+        
         tableView.reloadData()
+    }
+    
+    func trim(string: String) -> String {
+        return string.trimmingCharacters(in: .whitespaces)
     }
 
     /*
@@ -191,7 +212,7 @@ class CityTableViewController: UITableViewController , UISearchBarDelegate{
 }
 
 extension String {
-    func isAlphanumeric() -> Bool {
-        return NSPredicate(format: "SELF MATCHES %@", "[a-zA-Z0-9]+").evaluate(with: self)
+    func isAlphabetic() -> Bool {
+        return NSPredicate(format: "SELF MATCHES %@", "[a-zA-Z]+").evaluate(with: self)
     }
 }
