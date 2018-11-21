@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>105285516869-bke58ac1a8uohkldlpi45sec1cvi93gp.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.105285516869-bke58ac1a8uohkldlpi45sec1cvi93gp</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBCRgDYS38L-4OQ4jtLnbRey5covMn3m04</string>
+	<key>GCM_SENDER_ID</key>
+	<string>105285516869</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>jp.tommy.weather</string>
+	<key>PROJECT_ID</key>
+	<string>wethermap-5ab08</string>
+	<key>STORAGE_BUCKET</key>
+	<string>wethermap-5ab08.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true></true>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false></false>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:105285516869:ios:3bd2675800778190</string>
+	<key>DATABASE_URL</key>
+	<string>https://wethermap-5ab08.firebaseio.com</string>
+</dict>
+</plist>
