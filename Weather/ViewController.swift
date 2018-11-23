@@ -128,6 +128,7 @@ class ViewController: UIViewController {
         let min = Int(min_k - 273.15)
         let temp = Int(temp_k - 273.15)
         let name = json["name"].stringValue
+        let country = json["sys"]["country"].stringValue
         self.cityname = name
         
         DispatchQueue.main.async {
@@ -135,7 +136,7 @@ class ViewController: UIViewController {
             self.maxMinTempLabel.text = String(max) + "℃ / " + String(min) + "℃"
             self.humidityLabel.text = humidity + "%"
             self.weatherLabel.text = weather.capitalized
-            self.title = name
+            self.title = name + ", " + country
             
             let data = try? Data(contentsOf: url as! URL)
             
