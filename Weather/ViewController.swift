@@ -9,7 +9,7 @@
 //Ann
 //Joon
 import UIKit
-
+import GoogleMobileAds
 
 class ViewController: UIViewController {
     
@@ -35,6 +35,13 @@ class ViewController: UIViewController {
     
     var activityIndicatorView = UIActivityIndicatorView()
     
+    @IBOutlet weak var adsView: UIView!
+    // Ads Unit ID
+    let AdMobID = "ca-app-pub-3243383061950023/4668585209"
+    // Ads Testing Unit ID
+    let TEST_ID = "ca-app-pub-3940256099942544/2934735716"
+    let AdMobTest : Bool = true
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //loading
@@ -47,6 +54,23 @@ class ViewController: UIViewController {
         view.addSubview(activityIndicatorView)
         activityIndicatorView.startAnimating()
         //loading
+        
+        //ads
+        print("Google Mobile Ads SDK version: \(GADRequest.sdkVersion())")
+        var admobView = GADBannerView()
+        admobView = GADBannerView(adSize:kGADAdSizeBanner)
+        admobView.frame.origin = CGPoint(x:0, y:0)
+        admobView.frame.size = CGSize(width:self.view.frame.width, height:admobView.frame.height)
+        if AdMobTest {
+            admobView.adUnitID = TEST_ID
+        }else{
+            admobView.adUnitID = AdMobID
+        }
+        admobView.rootViewController = self
+        admobView.load(GADRequest())
+        adsView.addSubview(admobView)
+        self.view.addSubview(adsView)
+        //ads
     }
     
     override func viewDidAppear(_ animated: Bool) {

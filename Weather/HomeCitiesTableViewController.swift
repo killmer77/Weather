@@ -9,11 +9,13 @@
 import UIKit
 import GoogleMobileAds
 
-class HomeCitiesTableViewController: UITableViewController {
+class HomeCitiesTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     let userDefaults = UserDefaults.standard
     var homecities : [String] = []
     var homenames : [String] = []
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var adsView: UIView!
     
     //ads
     // Ads Unit ID
@@ -29,8 +31,7 @@ class HomeCitiesTableViewController: UITableViewController {
         print("Google Mobile Ads SDK version: \(GADRequest.sdkVersion())")
         var admobView = GADBannerView()
         admobView = GADBannerView(adSize:kGADAdSizeBanner)
-        let tab = tabBarController!.tabBar.frame.size.height
-        admobView.frame.origin = CGPoint(x:0, y:self.view.frame.size.height - admobView.frame.height - 70 - tab)
+        admobView.frame.origin = CGPoint(x:0, y:0)
         admobView.frame.size = CGSize(width:self.view.frame.width, height:admobView.frame.height)
         if AdMobTest {
             admobView.adUnitID = TEST_ID
@@ -39,7 +40,8 @@ class HomeCitiesTableViewController: UITableViewController {
         }
         admobView.rootViewController = self
         admobView.load(GADRequest())
-        self.view.addSubview(admobView)
+        adsView.addSubview(admobView)
+        self.view.addSubview(adsView)
         //ads
     }
     
@@ -48,25 +50,22 @@ class HomeCitiesTableViewController: UITableViewController {
         self.homenames = userDefaults.object(forKey: "name") as? [String] ?? []
         tableView.reloadData()
     }
-    // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.homenames.count
     }
 
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.textLabel?.text = homenames[indexPath.row]
         return cell
     }
 
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let vc = storyboard?.instantiateViewController(withIdentifier: "detail") as? ViewController {
             vc.cityid = self.homecities[indexPath.row]
             vc.fromhome = true
@@ -80,17 +79,6 @@ class HomeCitiesTableViewController: UITableViewController {
         return true
     }
     */
-    
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            homecities.remove(at: indexPath.row)
-            homenames.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .fade)
-            userDefaults.set(homecities, forKey: "home")
-            userDefaults.set(homenames, forKey: "name")
-            userDefaults.synchronize()
-        }
-    }
 
     /*
     // Override to support rearranging the table view.
