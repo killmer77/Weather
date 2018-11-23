@@ -9,5 +9,8 @@ target 'Weather' do
   pod 'Firebase/Core'
   pod 'Firebase/AdMob'
   pod 'Google-Mobile-Ads-SDK'
+  source 'https://github.com/CocoaPods/Specs.git'
+  use_frameworks!
+  pod 'SwiftyGif'
 
 end

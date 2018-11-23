@@ -10,6 +10,7 @@
 //Joon
 import UIKit
 import GoogleMobileAds
+import SwiftyGif
 
 class ViewController: UIViewController {
     
@@ -42,16 +43,29 @@ class ViewController: UIViewController {
     let TEST_ID = "ca-app-pub-3940256099942544/2934735716"
     let AdMobTest : Bool = true
     
+    var GifimageView : UIImageView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //loading
-        let screensize = UIScreen.main.bounds.size
-        let center = CGPoint(x: screensize.width / 2, y: (screensize.height / 2))
-        activityIndicatorView.center = center
-        activityIndicatorView.style = .whiteLarge
-        activityIndicatorView.color = .gray
-        view.addSubview(activityIndicatorView)
-        activityIndicatorView.startAnimating()
+//        let screensize = UIScreen.main.bounds.size
+//        let center = CGPoint(x: screensize.width / 2, y: (screensize.height / 2))
+//        activityIndicatorView.center = center
+//        activityIndicatorView.style = .whiteLarge
+//        activityIndicatorView.color = .gray
+//        view.addSubview(activityIndicatorView)
+//        activityIndicatorView.startAnimating()
+        let gif = UIImage(gifName: "pacman.gif")
+        self.GifimageView = UIImageView(gifImage: gif, loopCount: -1) // Use -1 for infinite loop
+        GifimageView.frame = view.bounds
+        GifimageView.contentMode = .scaleAspectFit
+        view.addSubview(GifimageView)
+        self.weatherLabel.isHidden = true
+        self.tempLabel.isHidden = true
+        self.humidityLabel.isHidden = true
+        self.maxMinTempLabel.isHidden = true
+        title = "Loading"
         //loading
         
         //ads
@@ -133,7 +147,7 @@ class ViewController: UIViewController {
     }
     
     func back(action: UIAlertAction! = nil) {
-            navigationController?.popViewController(animated: true)
+        navigationController?.popViewController(animated: true)
     }
     
     func parse(json: JSON) {
@@ -183,7 +197,12 @@ class ViewController: UIViewController {
                 self.humidityLabel.textColor = UIColor.white
                 self.weatherLabel.textColor = UIColor.white
             }
-            self.activityIndicatorView.stopAnimating()
+//            self.activityIndicatorView.stopAnimating()
+            self.GifimageView.removeFromSuperview()
+            self.weatherLabel.isHidden = false
+            self.tempLabel.isHidden = false
+            self.humidityLabel.isHidden = false
+            self.maxMinTempLabel.isHidden = false
         }
     }
 

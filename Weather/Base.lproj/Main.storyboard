@@ -173,7 +173,6 @@
         <!--Select the CIty-->
         <scene sceneID="072-c7-6XJ">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="IF0-UN-LAS" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController storyboardIdentifier="list" id="1c4-x0-Iav" customClass="CityTableViewController" customModule="Weather" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="mHH-fb-1hx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -206,6 +205,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Select the CIty" id="0It-s0-8Gb"/>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IF0-UN-LAS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4460" y="-535"/>
         </scene>
