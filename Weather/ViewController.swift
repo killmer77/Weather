@@ -46,7 +46,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         //loading
         let screensize = UIScreen.main.bounds.size
-        let navi = UIApplication.shared.statusBarFrame.size.height
         let center = CGPoint(x: screensize.width / 2, y: (screensize.height / 2))
         activityIndicatorView.center = center
         activityIndicatorView.style = .whiteLarge
