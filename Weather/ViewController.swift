@@ -24,6 +24,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var humidityLabel: UILabel!
     @IBOutlet weak var maxMinTempLabel: UILabel!
     var urlString: String = ""
+    var urlString2: String = ""
     @IBOutlet weak var iconImage: UIImageView!
     @IBOutlet weak var imageVIew: UIImageView!
     var cityids:[String] = []
@@ -89,14 +90,17 @@ class ViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         if fromMap {
             self.urlString = "https://api.openweathermap.org/data/2.5/weather?lat=\(self.lat)&lon=\(self.lon)&appid=e56c905428db86b3e78bd8a5064ef029"
+            self.urlString2 = "https://api.openweathermap.org/data/2.5/forecast?lat=\(self.lat)&lon=\(self.lon)&appid=e56c905428db86b3e78bd8a5064ef029"
             openweathermap()
         }else if fromhome{
-            urlString = "https://api.openweathermap.org/data/2.5/weather?id=\(cityid)&appid=e56c905428db86b3e78bd8a5064ef029"
+            self.urlString = "https://api.openweathermap.org/data/2.5/weather?id=\(cityid)&appid=e56c905428db86b3e78bd8a5064ef029"
+            self.urlString2 = "https://api.openweathermap.org/data/2.5/forecast?id=\(cityid)&appid=e56c905428db86b3e78bd8a5064ef029"
             openweathermap()
         }else{
             let index = cities.index(of: cityname)!
             self.cityid = cityids[index]
-            urlString = "https://api.openweathermap.org/data/2.5/weather?id=\(cityid)&appid=e56c905428db86b3e78bd8a5064ef029"
+            self.urlString = "https://api.openweathermap.org/data/2.5/weather?id=\(cityid)&appid=e56c905428db86b3e78bd8a5064ef029"
+            self.urlString2 = "https://api.openweathermap.org/data/2.5/forecast?id=\(cityid)&appid=e56c905428db86b3e78bd8a5064ef029"
             openweathermap()
         }
         
@@ -135,8 +139,14 @@ class ViewController: UIViewController {
     func openweathermap(){
         if let url = NSURL(string: self.urlString){
             let task = URLSession.shared.dataTask(with: url as URL, completionHandler: {data, response, error in
-            let json = try! JSON(data: data!)
-            self.parse(json: json)
+                let json = try! JSON(data: data!)
+                if let url2 = NSURL(string: self.urlString2){
+                    let task2 = URLSession.shared.dataTask(with: url2 as URL, completionHandler: {data, response, error in
+                        let json2 = try! JSON(data: data!)
+                        self.parse(json: json, json2: json2)
+                    })
+                    task2.resume()
+                }
             })
             task.resume()
         }else{
@@ -150,10 +160,10 @@ class ViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     
-    func parse(json: JSON) {
+    func parse(json: JSON, json2: JSON) {
         let main = json["main"]
-        let max_k = main["temp_max"].floatValue
-        let min_k = main["temp_min"].floatValue
+//        let max_k = main["temp_max"].floatValue
+//        let min_k = main["temp_min"].floatValue
         let temp_k = main["temp"].floatValue
         let humidity = main["humidity"].stringValue
         let weatherjson = json["weather"].arrayValue
@@ -161,12 +171,22 @@ class ViewController: UIViewController {
         let weather = weatherjson2["description"].stringValue
         let icon = weatherjson2["icon"].stringValue
         let url = NSURL(string: "https://openweathermap.org/img/w/" + String(icon.prefix(2)) + "d.png")
-        let max = Int(max_k - 273.15)
-        let min = Int(min_k - 273.15)
+//        let max = Int(max_k - 273.15)
+//        let min = Int(min_k - 273.15)
         let temp = Int(temp_k - 273.15)
         let name = json["name"].stringValue
         let country = json["sys"]["country"].stringValue
         self.cityname = name
+        let list = json2["list"].arrayValue
+        var tempminArray = [temp_k]
+        var tempmaxArray = [temp_k]
+        for i in 0...6{
+            let weatherdata = list[i]
+            tempminArray.append(weatherdata["main"]["temp_min"].floatValue)
+            tempmaxArray.append(weatherdata["main"]["temp_max"].floatValue)
+        }
+        let max = Int(tempmaxArray.max()! - 273.15)
+        let min = Int(tempminArray.min()! - 273.15)
         
         DispatchQueue.main.async {
             self.tempLabel.text = String(temp) + "℃"
