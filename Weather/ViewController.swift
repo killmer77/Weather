@@ -180,7 +180,7 @@ class ViewController: UIViewController {
         let list = json2["list"].arrayValue
         var tempminArray = [temp_k]
         var tempmaxArray = [temp_k]
-        for i in 0...6{
+        for i in 0..<6{
             let weatherdata = list[i]
             tempminArray.append(weatherdata["main"]["temp_min"].floatValue)
             tempmaxArray.append(weatherdata["main"]["temp_max"].floatValue)
