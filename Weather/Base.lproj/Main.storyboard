@@ -162,6 +162,7 @@
                     <navigationItem key="navigationItem" title="Select the City" id="gkl-oQ-5j2"/>
                     <connections>
                         <outlet property="adsView" destination="1LR-fR-B6M" id="5Px-5N-dwF"/>
+                        <outlet property="navigationBar" destination="gkl-oQ-5j2" id="JlZ-2q-U3Z"/>
                         <outlet property="searchBar" destination="h23-wG-HXD" id="Iak-zk-Ybb"/>
                         <outlet property="tableView" destination="uJm-FO-Vby" id="XZ7-VC-s4a"/>
                     </connections>
@@ -288,6 +289,7 @@
                     <navigationItem key="navigationItem" title="Home Cities" id="00S-Dq-B01"/>
                     <connections>
                         <outlet property="adsView" destination="BXy-mL-6iX" id="5nR-Bb-28A"/>
+                        <outlet property="navigationBar" destination="00S-Dq-B01" id="Eg0-cd-1Mr"/>
                         <outlet property="tableView" destination="slN-1R-DdB" id="Lvl-bL-P09"/>
                     </connections>
                 </viewController>

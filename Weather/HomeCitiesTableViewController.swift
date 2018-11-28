@@ -16,6 +16,7 @@ class HomeCitiesTableViewController: UIViewController, UITableViewDelegate, UITa
     var homenames : [String] = []
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var adsView: UIView!
+    @IBOutlet weak var navigationBar: UINavigationItem!
     
     //ads
     // Ads Unit ID
@@ -43,6 +44,8 @@ class HomeCitiesTableViewController: UIViewController, UITableViewDelegate, UITa
         adsView.addSubview(admobView)
         self.view.addSubview(adsView)
         //ads
+        
+        self.navigationBar.title = NSLocalizedString("homecity", comment: "")
     }
     
     override func viewDidAppear(_ animated: Bool) {

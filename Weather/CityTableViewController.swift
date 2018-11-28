@@ -25,6 +25,7 @@ class CityTableViewController: UIViewController, UITableViewDelegate, UITableVie
 
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var navigationBar: UINavigationItem!
     
     //ads
     @IBOutlet weak var adsView: UIView!
@@ -50,6 +51,8 @@ class CityTableViewController: UIViewController, UITableViewDelegate, UITableVie
         
         searchBar.delegate = self as UISearchBarDelegate
         searchBar.enablesReturnKeyAutomatically = false
+        
+        self.navigationBar.title = NSLocalizedString("select", comment: "")
         
         //ads
         print("Google Mobile Ads SDK version: \(GADRequest.sdkVersion())")
