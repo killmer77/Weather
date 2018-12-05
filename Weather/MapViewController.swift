@@ -24,7 +24,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     let AdMobID = "ca-app-pub-3243383061950023/4668585209"
     // Ads Testing Unit ID
     let TEST_ID = "ca-app-pub-3940256099942544/2934735716"
-    let AdMobTest : Bool = true
+    let AdMobTest : Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -33,7 +33,7 @@ class CityTableViewController: UIViewController, UITableViewDelegate, UITableVie
     let AdMobID = "ca-app-pub-3243383061950023/4668585209"
     // Ads Testing Unit ID
     let TEST_ID = "ca-app-pub-3940256099942544/2934735716"
-    let AdMobTest : Bool = true
+    let AdMobTest : Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -113,7 +113,7 @@ class CityTableViewController: UIViewController, UITableViewDelegate, UITableVie
         var arrays:[Array<String>] = []
         for city in json.arrayValue {
             let name = city["name"].stringValue
-            let firstletter = String(name.prefix(1))
+            let firstletter = String(name.prefix(1)).lowercased()
             let id = city["id"].stringValue
             if let index = keys.index(of: firstletter) {
                 arrays[index].append(name)
@@ -151,7 +151,7 @@ class CityTableViewController: UIViewController, UITableViewDelegate, UITableVie
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         searchResults.removeAll()
         
-        let searchwords = searchBar.text!.replacingOccurrences(of: " ", with: "") 
+        let searchwords = searchBar.text!.replacingOccurrences(of: " ", with: "")
         
         guard searchwords.count > 0 else {
             searchResults = cities
@@ -178,9 +178,9 @@ class CityTableViewController: UIViewController, UITableViewDelegate, UITableVie
         }
         
         if searchBar.text != "" {
-            let firstletter = String((searchBar.text!.prefix(1)))
-            for city in dic_city[firstletter]! {
-                if let _ = city.range(of: searchBar.text!) {
+            let firstletter = String((searchBar.text!.prefix(1))).lowercased()
+            for city in dic_city[firstletter] ?? [] {
+                if let _ = city.lowercased().range(of: searchBar.text!.lowercased()) {
                     searchResults.append(city)
                 }
             }
@@ -193,52 +193,6 @@ class CityTableViewController: UIViewController, UITableViewDelegate, UITableVie
     func trim(string: String) -> String {
         return string.trimmingCharacters(in: .whitespaces)
     }
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 extension String {
